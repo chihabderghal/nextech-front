@@ -1,0 +1,16 @@
+services:
+  app:
+    image: nextech:latest
+    container_name: nextech
+    build:
+        dockerfile: docker/dev/Dockerfile
+        context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app:rw
+    networks:
+      - net
+
+networks:
+  net:
